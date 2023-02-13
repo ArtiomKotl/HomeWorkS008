@@ -67,29 +67,29 @@ int ReceiveMinMax(string minOrMax)
   return result;
 }
 
-int[,] SortArray2d(int[,] oldArray2d)
+int[,] SortArray2d(int[,] oldArray2D)
 {
-  int[,] sortArray2d = new int[oldArray2d.GetLength(0), oldArray2d.GetLength(1)];
-  sortArray2d = oldArray2d;
+  int[,] sortArray2D = new int[oldArray2D.GetLength(0), oldArray2D.GetLength(1)];
+  sortArray2D = oldArray2D;
   int temp = 0;
   int max = 0;
-  for (int i = 0; i < sortArray2d.GetLength(0); i++)
+  for (int i = 0; i < sortArray2D.GetLength(0); i++)
   {
-    for (int j = 0; j < sortArray2d.GetLength(1) - 1; j++)
+    for (int j = 0; j < sortArray2D.GetLength(1) - 1; j++)
     {
-      for (int k = j + 1; k < sortArray2d.GetLength(1); k++)
+      for (int k = j + 1; k < sortArray2D.GetLength(1); k++)
       {
-        max = sortArray2d[i, j];
-        if (max < sortArray2d[i, k])
+        max = sortArray2D[i, j];
+        if (max < sortArray2D[i, k])
         {
-          temp = sortArray2d[i, k];
-          sortArray2d[i, k] = sortArray2d[i, j];
-          sortArray2d[i, j] = temp;
+          temp = sortArray2D[i, k];
+          sortArray2D[i, k] = sortArray2D[i, j];
+          sortArray2D[i, j] = temp;
         }
       }
     }
   }
-  return sortArray2d;
+  return sortArray2D;
 }
 
 int m = NumberOfRows();
@@ -99,7 +99,7 @@ int max = ReceiveMinMax("максимума");
 
 int[,] random2dArray = Generate2DArray(m, n, min, max);
 PrintArray2D(random2dArray);
-int[,] sortArray2d = SortArray2d(random2dArray);
+int[,] sortArray2D = SortArray2d(random2dArray);
 Console.WriteLine();
 Console.WriteLine("В итоге получается вот такой Отсортированный массив:");
-PrintArray2D(sortArray2d);
+PrintArray2D(sortArray2D);
